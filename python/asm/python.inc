@@ -2,10 +2,7 @@
 ;; EXTERNAL SYMBOLS
 ;; ---------------------------------------------------------------------------
 
-EXTERN    PyArg_ParseTuple
-EXTERN    PyLong_FromLong
 EXTERN    PyModule_Create2
-
 EXTERN    _Py_NoneStruct
 
 
@@ -14,8 +11,8 @@ EXTERN    _Py_NoneStruct
 ;; ---------------------------------------------------------------------------
 
 NULL                          equ 0x0
-METH_VARARGS                  equ 0x0001
 PYTHON_API_VERSION            equ 1013
+METH_NOARGS                   equ 0x4
 
 
 ;; ---------------------------------------------------------------------------

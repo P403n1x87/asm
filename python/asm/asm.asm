@@ -9,8 +9,6 @@ GLOBAL                  PyInit_asm:function
 SECTION                 .rodata
 ;; ---------------------------------------------------------------------------
 
-l_command_fmt           db "s", 0
-
 l_sayit_name            db "sayit", 0
 l_sayit_doc             db "This method has something important to say.", 0
 l_sayit_msg             db "Assembly is great fun! :)", 10
@@ -27,7 +25,7 @@ l_asm_methods:              ;; struct PyMethodDef[] *
 ISTRUC PyMethodDef
   at PyMethodDef.ml_name    , dq l_sayit_name
   at PyMethodDef.ml_meth    , dq asm_sayit
-  at PyMethodDef.ml_flags   , dq METH_VARARGS
+  at PyMethodDef.ml_flags   , dq METH_NOARGS
   at PyMethodDef.ml_doc     , dq l_sayit_doc
 IEND
 NullMethodDef
@@ -44,8 +42,6 @@ ISTRUC PyModuleDef
   at PyModuleDef.m_clear    , dq 0
   at PyModuleDef.m_free     , dq NULL
 IEND
-
-l_command                     dq 0
 
 
 ;; ---------------------------------------------------------------------------
