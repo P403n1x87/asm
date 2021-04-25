@@ -19,6 +19,7 @@
 ; You should have received a copy of the GNU General Public License
 ; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ;
+default                 rel
 
 global main
 
@@ -40,5 +41,5 @@ main:
     ; return printf(hello) - hello_len;
     lea     rdi, [hello]
     xor     rax, rax
-    call    printf
+    call    printf WRT ..plt
     sub     rax, hello_len
